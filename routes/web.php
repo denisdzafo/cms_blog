@@ -36,6 +36,13 @@ Route::middleware(['auth:admin'])->group(function (){
     Route::delete('users/moderators/{id}','Admin\AdminUsersController@moderatorsPrivilege')->name('admin.users.moderators.privilege');
 
     Route::resource('blog/categories','Admin\BlogCategories');
+
+    Route::resource('testimonials','Admin\TestimonialContoller');
+
+    Route::resource('tags','Admin\TagController');
+
+    Route::get('/moderators/index','Admin\ModeratorsController@index')->name('admin.moderators.index');
+    Route::delete('/moderators/remove/privilege/{id}','Admin\ModeratorsController@destroy')->name('admin.modertors.remove.privilege');
   });
 });
 
@@ -45,4 +52,12 @@ Route::middleware(['auth:moderator'])->group(function (){
 
 
   });
+});
+
+Route::middleware(['auth:web'])->group(function (){
+  Route::prefix('user')->group(function (){
+    Route::resource('/blogs', 'User\BlogController');
+  });
+  
+  Route::get('storage/{filename}','User\BlogController@getPicture')->name('user.blog.get.picture');
 });

@@ -18,7 +18,14 @@
                     <br>
                     <a href="{{route('admin.users.get')}}">All Users</a>
                     <br>
+                    <a href="{{route('admin.moderators.index')}}">Moderators</a>
+                    <br>
                     <a href="{{route('categories.index')}}">Blog Categories</a>
+                    <br>
+                    <a href="{{route('testimonials.index')}}">Testimonials </a>
+                    <br>
+                    <a href="{{route('tags.index')}}">Tags</a>
+
                 </div>
             </div>
         </div>
