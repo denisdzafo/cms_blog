@@ -29,6 +29,7 @@ class AdminUsersController extends Controller
 
       $moderator->username=$user->username;
       $moderator->email=$user->email;
+      $moderator->picture=$user->picture;
       $moderator->password=$user->password;
       $moderator->save();
 

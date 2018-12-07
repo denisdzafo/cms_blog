@@ -17,7 +17,7 @@
                     Edit Blog
                     <br>
                     <div class="row">
-                      <form class="form-horizontal" role="form"  method="post" action="{{route ('blogs.update',$blog->id)}}" enctype="multipart/form-data">
+                      <form class="form-horizontal" role="form"  method="post" action="{{route ('adminBlogs.update',$blog->id)}}" enctype="multipart/form-data">
                          <input type="hidden" name="_token" value="{{csrf_token()}}">
                          <input type="hidden" name="_method" value="PUT"/>
                          <div class="form-row">
@@ -49,18 +49,6 @@
                                @endforeach
                              </select>
                           </div>
-
-                          <div class="form-row">
-                           <div class="form-group col-md-6">
-                              <label class="form-label">Tags </label>
-                              <select class="form-control select2-multi" name="tags[]" multiple="multiple">
-
-                              @foreach($tags as $tag)
-                                  <option value="{{$tag->id}}" @foreach($blog->tags as $p) {{ $tag->id == $p->id ? 'selected="selected"' : '' }} @endforeach>{{$tag->name}}</option>
-                              @endforeach
-                            </select>
-                           </div>
-                        </div>
 
                          <div class="form-row">
                             <div class="form-group col-md-6">

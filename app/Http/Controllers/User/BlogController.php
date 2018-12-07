@@ -45,32 +45,32 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-      //Validate the request
-    $this->validate($request, [
-        'title' => 'required|string|max:255',
-        'content' => 'required',
-        'blogCategory_id'=>'required'
-    ]);
 
-      $user = Auth::guard('web')->user();
-      $blog=new Blog();
-      $blog->title=$request->title;
-      $blog->content=$request->content;
-      $blog->user_id=$user->id;
-      $blog->blogCategory_id=$request->blogCategory_id;
+        $this->validate($request, [
+            'title' => 'required|string|max:255',
+            'content' => 'required',
+            'blogCategory_id'=>'required'
+        ]);
 
-      if ( $request->picture) {
-          $fileName = $user->id."_".date('mdY_his').'.'.request()->picture->getClientOriginalExtension();
-          $path = $request->file('picture')->storeAs('userBlog', $fileName);
-          $blog->picture = $path;
-      }
-      $blog->save();
-      if ( $request->tags != NULL ) {
-          $blog->tags()->attach($request->tags);
-      }
+          $user = Auth::guard('web')->user();
+          $blog=new Blog();
+          $blog->title=$request->title;
+          $blog->content=$request->content;
+          $blog->user_id=$user->id;
+          $blog->blogCategory_id=$request->blogCategory_id;
 
-      Session::flash('success', "Blog has been successfully created.");
-      return redirect()->route('blogs.index');
+          if ( $request->picture) {
+              $fileName = $user->id."_".date('mdY_his').'.'.request()->picture->getClientOriginalExtension();
+              $path = $request->file('picture')->storeAs('userBlog', $fileName);
+              $blog->picture = $path;
+          }
+          $blog->save();
+          if ( $request->tags != NULL ) {
+              $blog->tags()->attach($request->tags);
+          }
+
+          Session::flash('success', "Blog has been successfully created.");
+          return redirect()->route('blogs.index');
     }
 
     /**
@@ -119,7 +119,6 @@ class BlogController extends Controller
           $blog=Blog::findOrFail($id);
           $blog->title=$request->title;
           $blog->content=$request->content;
-          $blog->user_id=$user->id;
           $blog->blogCategory_id=$request->blogCategory_id;
 
           if ( $request->picture) {
@@ -149,12 +148,5 @@ class BlogController extends Controller
 
       Session::flash('success','You have succesfully deleted a blog.');
       return redirect()->route('blogs.index');
-    }
-
-    public function getPicture($pictureName)
-    {
-      $filePath=storage_path('storage')."/".$pictureName;
-      dd($filePath);
-      return response()->download($filePath);
-    }
+    }    
 }

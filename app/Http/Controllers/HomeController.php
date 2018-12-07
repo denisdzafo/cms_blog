@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getPicture($pictureName)
+    {
+      $filePath=storage_path('storage')."/".$pictureName;
+      return response()->download($filePath);
+    }
 }

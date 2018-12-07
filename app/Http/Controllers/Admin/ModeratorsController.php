@@ -90,6 +90,7 @@ class ModeratorsController extends Controller
 
       $user->username=$moderator->username;
       $user->email=$moderator->email;
+      $user->picture=$moderator->picture;
       $user->password=$moderator->password;
       $user->save();
 

@@ -10,4 +10,9 @@ class Comment extends Model
   {
     return $this->belongsTo('App\Blog');
   }
+
+  public function users()
+  {
+    return $this->belongsTo('App\User');
+  }
 }

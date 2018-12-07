@@ -25,7 +25,8 @@
                     <a href="{{route('testimonials.index')}}">Testimonials </a>
                     <br>
                     <a href="{{route('tags.index')}}">Tags</a>
-
+                    <br>
+                    <a href="{{route('adminBlogs.index')}}">Blog</a>
                 </div>
             </div>
         </div>

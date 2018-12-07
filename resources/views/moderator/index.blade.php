@@ -16,7 +16,11 @@
 
                     You are logged in Moderator!
                     <br>
-
+                    <a href="{{route('moderator.users.get')}}">All Users</a>
+                    <br>
+                    <a href="{{route('moderator.blog')}}">Blogs</a>
+                    <br>
+                    <a href="{{route('moderator.edit.profile')}}">Edit Profile</a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
                     Edit Blog
                     <br>
                     <div class="row">
-                      <form class="form-horizontal" role="form"  method="post" action="{{route ('blogs.update',$blog->id)}}" enctype="multipart/form-data">
+                      <form class="form-horizontal" role="form"  method="post" action="{{route ('moderator.blog.update',$blog->id)}}" enctype="multipart/form-data">
                          <input type="hidden" name="_token" value="{{csrf_token()}}">
                          <input type="hidden" name="_method" value="PUT"/>
                          <div class="form-row">

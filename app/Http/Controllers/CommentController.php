@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use Session;
 
 class CommentController extends Controller
 {
@@ -35,7 +36,19 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+          'username' => 'required|string|max:255',
+          'comment' => 'required|min:10',
+      ]);
+
+      $comment=new Comment();
+      $comment->username=$request->username;
+      $comment->text=$request->comment;
+      $comment->blog_id=$request->blog_id;
+
+      $comment->save();
+      Session::flash('success','Your comment is recived, thank you.');
+      return redirect()->route('blog.page');
     }
 
     /**
@@ -78,8 +91,11 @@ class CommentController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        //
+        $comment=Comment::findOrFail($id);
+        $comment->delete();
+        Session::flash('success','Comment is deleted.');
+        return redirect()->route('blog.page');
     }
 }

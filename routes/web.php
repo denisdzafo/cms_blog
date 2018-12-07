@@ -25,9 +25,15 @@ Route::get('moderator/login','Moderator\ModeratorLoginController@getLoginForm')-
 
 Route::post('moderator/login/submit','Moderator\ModeratorLoginController@submitLogin')->name('moderator.login.submit');
 
+Route::get('/blog','PageController@getBlog')->name('blog.page');
+
+Route::resource('comments','CommentController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'Admin\AdminController@index')->name('admin.dashboard');
+
+  Route::get('storage/{filename}','HomeController@getPicture')->name('blog.get.picture');
 
 Route::middleware(['auth:admin'])->group(function (){
   Route::prefix('admin')->group(function (){
@@ -41,23 +47,34 @@ Route::middleware(['auth:admin'])->group(function (){
 
     Route::resource('tags','Admin\TagController');
 
+    Route::resource('adminBlogs','Admin\AdminBlogController');
+
     Route::get('/moderators/index','Admin\ModeratorsController@index')->name('admin.moderators.index');
     Route::delete('/moderators/remove/privilege/{id}','Admin\ModeratorsController@destroy')->name('admin.modertors.remove.privilege');
-  });
+
+    });
 });
 
 Route::middleware(['auth:moderator'])->group(function (){
   Route::prefix('moderator')->group(function (){
     Route::get('/', 'Moderator\ModeratorController@index')->name('moderator.dashboard');
 
+    Route::get('users','Moderator\ModeratorController@getUsers')->name('moderator.users.get');
+    Route::delete('users/moderators/{id}','Moderator\ModeratorController@moderatorsPrivilege')->name('moderator.users.privilege');
 
-  });
+    Route::get('blogs','Moderator\ModeratorController@indexBlog')->name('moderator.blog');
+    Route::get('blogs/edit/{id}', 'Moderator\ModeratorController@editBlog')->name('moderator.blog.edit');
+    Route::put('blogs/edit/submit/{id}','Moderator\ModeratorController@updateBlog')->name('moderator.blog.update');
+
+    Route::get('edit/profile','Moderator\ModeratorController@editProfile')->name('moderator.edit.profile');
+    Route::put('edit/profile/submit/{id}','Moderator\ModeratorController@editProfileSubmit')->name('moderator.edit.profile.submit');
+    });
 });
 
 Route::middleware(['auth:web'])->group(function (){
   Route::prefix('user')->group(function (){
     Route::resource('/blogs', 'User\BlogController');
   });
-  
-  Route::get('storage/{filename}','User\BlogController@getPicture')->name('user.blog.get.picture');
+
+
 });
