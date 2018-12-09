@@ -40,6 +40,7 @@ Route::middleware(['auth:admin'])->group(function (){
     Route::get('/', 'Admin\AdminController@index')->name('admin.dashboard');
     Route::get('users','Admin\AdminUsersController@getUsers')->name('admin.users.get');
     Route::delete('users/moderators/{id}','Admin\AdminUsersController@moderatorsPrivilege')->name('admin.users.moderators.privilege');
+    Route::delete('user/delete/{id}','Admin\AdminUsersController@deleteUser')->name('admin.user.destroy');
 
     Route::resource('blog/categories','Admin\BlogCategories');
 
@@ -73,7 +74,13 @@ Route::middleware(['auth:moderator'])->group(function (){
 
 Route::middleware(['auth:web'])->group(function (){
   Route::prefix('user')->group(function (){
+    Route::get('/', 'User\UserController@index')->name('user.dashboard');
     Route::resource('/blogs', 'User\BlogController');
+
+    Route::get('edit/profile','User\UserController@editProfile')->name('user.edit.profile');
+    Route::put('edit/profile/submit/{id}','User\UserController@editProfileSubmit')->name('user.edit.profile.submit');
+
+    Route::get('comments','User\UserController@getComments')->name('user.get.comments');
   });
 
 

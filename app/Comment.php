@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-  public function blogCategory()
+  public function blogs()
   {
     return $this->belongsTo('App\Blog');
   }

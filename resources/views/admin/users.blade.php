@@ -23,6 +23,11 @@
                             <input type="hidden" name="_method" value="DELETE"/>
                             <button type="submit" class="btn btn-primary">Add Moderator Privilege </button>
                           </form>
+                          <form class="form-horizontal" role="form"  method="post" action="{{route ('admin.user.destroy',$user->id)}}">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                           </form>
                       </div>
                       @endforeach
                     </div>

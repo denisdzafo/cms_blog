@@ -11,6 +11,7 @@ use App\Blog;
 use App\BlogCategory;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ModeratorController extends Controller
 {
@@ -139,6 +140,7 @@ class ModeratorController extends Controller
       $moderator->info=$request->info;
       }
       if ( $request->picture) {
+          Storage::delete($moderator->picture);
           $fileName = $moderator->id."_".date('mdY_his').'.'.request()->picture->getClientOriginalExtension();
           $path = $request->file('picture')->storeAs('moderators', $fileName);
           $moderator->picture = $path;

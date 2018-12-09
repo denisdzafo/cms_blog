@@ -20,7 +20,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-      $blogs=Blog::all();
+      $id = Auth::guard('web')->id();
+      $blogs=Blog::where('user_id','=',$id)->get();
       return view('user.blogs.index')->withBlogs($blogs);
     }
 
@@ -148,5 +149,5 @@ class BlogController extends Controller
 
       Session::flash('success','You have succesfully deleted a blog.');
       return redirect()->route('blogs.index');
-    }    
+    }
 }

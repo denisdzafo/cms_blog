@@ -39,4 +39,14 @@ class AdminUsersController extends Controller
 
       return redirect()->route('admin.users.get');
     }
+
+    public function deleteUser($id)
+    {
+      $user=User::findOrFail($id);
+      $user->delete();
+      Session::flash('success','User has been deleted.');
+
+      return redirect()->route('admin.users.get');
+
+    }
 }

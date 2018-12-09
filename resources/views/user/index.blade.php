@@ -16,7 +16,11 @@
 
                     You are logged in
                     <br>
-                    
+                    <a href="{{route('blogs.index')}}">Blogs</a>
+                    <br>
+                    <a href="{{route('user.edit.profile')}}">Edit Profile</a>
+                    <br>
+                    <a href="{{route('user.get.comments')}}">Your Comments</a>
                 </div>
             </div>
         </div>

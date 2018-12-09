@@ -46,6 +46,11 @@ class CommentController extends Controller
       $comment->text=$request->comment;
       $comment->blog_id=$request->blog_id;
 
+      if($request->user_id)
+      {
+        $comment->user_id=$request->user_id;
+      }
+
       $comment->save();
       Session::flash('success','Your comment is recived, thank you.');
       return redirect()->route('blog.page');

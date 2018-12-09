@@ -40,12 +40,20 @@
                           <form method="post" action="{{route ('comments.store')}}" enctype="multipart/form-data">
                              <input type="hidden" name="_token" value="{{csrf_token()}}">
                              <input type="hidden" name="blog_id" value="{{$blog->id}}">
+                             @php
+                              $user=Auth::user();
+                             @endphp
+                             @if($user)
+                                <input type="hidden" name="username" value="{{$user->username}}">
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
+                             @else
                              <div class="form-row">
                                 <div class="form-group col-md-6">
                                    <label class="form-label">Username</label>
                                    <input type="text" name="username" class="form-control">
                                 </div>
                              </div>
+                              @endif
                              <div class="form-row">
                                 <div class="form-group col-md-6">
                                    <label class="form-label">Comment</label>

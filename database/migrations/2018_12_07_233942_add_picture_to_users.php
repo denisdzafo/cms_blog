@@ -15,6 +15,7 @@ class AddPictureToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('picture')->nullable();
+            $table->longText('info')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddPictureToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('picture');
+            $table->dropColumn('info');
         });
     }
 }
