@@ -11,11 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+Route::get('/','PageController@getIndex')->name('index.page');
+
+Route::get('blog','PageController@getBlog')->name('blog.page');
+
+Route::get('about','PageController@getAbout')->name('about.page');
+
+Route::get('author','PageController@getAuthor')->name('author.page');
+
+Route::get('contact','PageController@getContact')->name('contact.page');
 
 Route::get('admin/login','Admin\AdminLoginController@getLoginForm')->name('admin.login');
 
@@ -25,15 +32,9 @@ Route::get('moderator/login','Moderator\ModeratorLoginController@getLoginForm')-
 
 Route::post('moderator/login/submit','Moderator\ModeratorLoginController@submitLogin')->name('moderator.login.submit');
 
-Route::get('/blog','PageController@getBlog')->name('blog.page');
-
 Route::resource('comments','CommentController');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/admin', 'Admin\AdminController@index')->name('admin.dashboard');
-
-  Route::get('storage/{filename}','HomeController@getPicture')->name('blog.get.picture');
+Route::get('storage/{filename}','HomeController@getPicture')->name('blog.get.picture');
 
 Route::middleware(['auth:admin'])->group(function (){
   Route::prefix('admin')->group(function (){
