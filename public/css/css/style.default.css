@@ -1,10 +1,10 @@
-/* 
-========================================= 
-========================================= 
+/*
+=========================================
+=========================================
 
 Bootstrapious Boilerplate Template
 
-========================================= 
+=========================================
 ========================================= */
 /*
 *
@@ -58,23 +58,6 @@ section {
 
 .text-500 {
   font-weight: 500 !important;
-}
-
-.title {
-  display: inline-block;
-  font-size: 2.9rem;
-  font-weight: 100;
-  padding: 10px 0;
-  margin-bottom: 44px;
-  text-align: center;
-  border-bottom: solid 1px #ccc;
-  border-top: solid 1px #ccc;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  color: #555;
-  margin-top: 20px;
-  letter-spacing: 0;
 }
 
 .title span {

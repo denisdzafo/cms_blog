@@ -28,6 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $table = 'users';
+
     public function blogs()
     {
       return $this->hasMany('App\Blog');

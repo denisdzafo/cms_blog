@@ -14,10 +14,11 @@
         <!-- Google fonts - Roboto + Roboto Slab-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
         <!-- owl carousel-->
-        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-        <link href="{{ asset('css/vendor/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
-        <link href="{{ asset('css/vendor/owl.carousel/assets/owl.theme.default.css') }}" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
         <!-- animate.css-->
         <link rel="stylesheet" href="vendor/animate.css/animate.css">
         <link href="{{ asset('css/vendor/animate.css/animate.css') }}" rel="stylesheet">
@@ -31,3 +32,8 @@
         <link href="{{ asset('css/app.css')}}" rel="stylesheet">
         <!-- Favicon-->
         <link rel="shortcut icon" href="img/favicon.png">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+
+        <script src="{{asset('js/app.js')}}" > </script>

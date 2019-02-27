@@ -9,8 +9,8 @@
       @include('partials.nav')
     </header>
 
-  
-    <section id="content">
+
+    <section id="content" class="@yield('body_class')">
       @yield('content')
     </section>
 

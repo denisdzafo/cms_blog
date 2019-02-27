@@ -24,6 +24,8 @@ Route::get('author','PageController@getAuthor')->name('author.page');
 
 Route::get('contact','PageController@getContact')->name('contact.page');
 
+Route::get('single-blog/{id}','PageController@getSingleBlog')->name('single.blog.page');
+
 Route::get('admin/login','Admin\AdminLoginController@getLoginForm')->name('admin.login');
 
 Route::post('admin/login/submit','Admin\AdminLoginController@submitLogin')->name('admin.login.submit');

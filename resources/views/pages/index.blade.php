@@ -49,6 +49,73 @@
 </section>
 
 <section id="image" style="background: url({{asset('images/homepage-image-section.jpg')}}) center center no-repeat; background-size: cover;">
-  
+
 </section>
+
+  <section class="testimonials ">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+              <div id="testimonial-slider" class="owl-carousel">
+
+                @foreach($testimonials as $testimonial)
+                  <div class="testimonial">
+
+                      <p class="description">
+                          {{$testimonial->quote}}
+                      </p>
+                      <h3 class="title">{{$testimonial->author}}
+                          <span class="post"> - {{$testimonial->position}}</span>
+                      </h3>
+                  </div>
+                @endforeach
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about">
+          <div class="row row-eq-height">
+
+            <div  class="col-md-6">
+              <header class="text-center">
+                <h2  class="title">About me</h2>
+              </header>
+              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
+              <p>Received overcame oh sensible so at an. Formed do change merely to county it. <strong>Am separate contempt</strong> domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.</p>
+              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
+            </div>
+            <div class="col-md-6"  style="background: url({{asset('images/mill.jpg')}}) center center no-repeat; background-size: cover;">
+
+
+
+
+          </div>
+
+
+
+
+
+            <div class="col-md-6"  style="background: url({{asset('images/mill.jpg')}}) center center no-repeat; background-size: cover;">
+
+
+
+
+          </div>
+            <div  class="col-md-6">
+              <header class="text-center">
+                <h2  class="title">About me</h2>
+              </header>
+              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
+              <p>Received overcame oh sensible so at an. Formed do change merely to county it. <strong>Am separate contempt</strong> domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.</p>
+              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
+            </div>
+
+        </div>
+      </section>
+
+
 @endsection

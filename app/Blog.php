@@ -6,14 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+  protected $fillable = [
+    'title',
+    'content',
+    'blogCategory_id',
+    'user_id'
+];
+  protected $table = 'blogs';
+
   public function users()
   {
-      return $this->belongsTo('App\User');
+      return $this->belongsTo('App\User','user_id');
   }
 
   public function blogCategories()
   {
-    return $this->belongsTo('App\BlogCategory');
+    return $this->belongsTo('App\BlogCategory','blogCategory_id');
   }
 
   public function tags()
