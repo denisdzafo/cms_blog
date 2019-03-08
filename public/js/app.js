@@ -36310,6 +36310,13 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#title").click(function () {
+        $(".comment").toggle();
+        $(".line-break").toggle();
+    });
+});
+
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {

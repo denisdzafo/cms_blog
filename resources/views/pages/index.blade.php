@@ -1,14 +1,16 @@
 @extends('partials.main')
 @section('title','Homepage')
 @section('content')
+@section('body_class','homepage')
+
 <section id="header" style="background: url({{asset('images/home.jpg')}}) center center no-repeat; background-size: cover;" class="intro-section pb-2">
    <div class="container text-center">
-      <div data-animate="fadeInDown" class="logo"><img src="img/logo-big.png" alt="logo" width="130"></div>
-      <h1 data-animate="fadeInDown" class="text-shadow mb-5">Hello, hola, नमस्ते !</h1>
-      <p data-animate="slideInUp" class="h3 text-shadow text-400">I grind HTML and CSS and then weld them with PHP into beautiful and efficient websites.</p>
+      <h1 class="text-shadow mb-5">CMS BLOG</h1>
+      <p class="h3 text-shadow text-400">Lorem ipsum dolor sit amet, cu aperiri habemus reprimique est, nobis inciderint cu vix.</p>
    </div>
 </section>
-<section>
+
+<section class="intro">
    <div class="container">
       <div class="text-center">
          <h2>Lorem Ipsum</h2>
@@ -23,72 +25,114 @@
    </div>
 </section>
 
-<section id="blog">
+<section class="blog-section">
    <div class="container">
       <div class="row">
-         @foreach($blogs as $blog)
-         <div class="col-md-4">
-            @php $image='storage'.'/'.$blog->picture; @endphp
-            <a href="#" style="background:url({{$image}})  center no-repeat" class="blog-image"> </a>
-            <div class="blog-post">
-               <div class="post-meta">
-                  <h5>{{$blog->title}}</h5>
-                  <i>{{$blog->created_at}}</i>
-                  <p>
-                     @php
-                     $text=substr($blog->content, 0, 100)
-                     @endphp
-                     {{$text}}
-                  </p>
-               </div>
-            </div>
-         </div>
-         @endforeach
+        @foreach($blogs as $blog)
+        <div class="col-md-4">
+           @php $image='storage'.'/'.$blog->picture; @endphp
+
+           <div class="blog-post">
+             <img src="{{asset($image)}}" alt="" class="blog-image">
+
+                 <h5 class="blog-title"><a href="{{route('single.blog.page',$blog->id)}}">{{$blog->title}}</a></h5>
+                 <i class="date">{{$blog->created_at->format('d/m/Y') }}</i>
+                 <p>
+                    @php
+                    $text=substr($blog->content, 0, 50)
+                    @endphp
+                    {{$text}}...
+                 </p>
+
+           </div>
+        </div>
+          @endforeach
       </div>
    </div>
 </section>
 
-<section id="image" style="background: url({{asset('images/homepage-image-section.jpg')}}) center center no-repeat; background-size: cover;">
-
-</section>
+<section id="statistics" data-dir="up" style="background: url({{asset('images/homepage-image-section.jpg')}});" class="statistics-section text-white parallax parallax">
+      <div class="container">
+        <div class="row showcase text-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="item">
+              <div class="icon"><i class="fa fa-align-justify"></i></div>
+              <h5 class="text-400 mt-4 text-uppercase"><span class="counter">140</span><br>Lorem Ipsum</h5>
+            </div>
+          </div>
+          <div  class="col-lg-3 col-md-6">
+            <div class="item">
+              <div class="icon"><i class="fa fa-users"></i></div>
+              <h5 class="text-400 mt-4 text-uppercase"><span class="counter">70</span><br>Lorem Ipsum</h5>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="item">
+              <div class="icon"><i class="fa fa-copy"></i></div>
+              <h5 class="text-400 mt-4 text-uppercase"><span class="counter">220</span><br>Lorem Ipsum</h5>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="item">
+              <div class="icon"><i class="fa fa-font"></i></div>
+              <h5 class="text-400 mt-4 text-uppercase"><span class="counter">444</span><br>Lorem Ipsum</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dark-mask"></div>
+    </section>
 
   <section class="testimonials ">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-offset-2 col-md-8">
-              <div id="testimonial-slider" class="owl-carousel">
+    <div class="demo">
+    <div class="container text-center">
+        <div class="row text-center">
+            <div class="col-md-12">
+              <h2 class="title">Testimonials</h2>
+                <div id="testimonial-slider" class="owl-carousel">
+                  @foreach($testimonials as $testimonial)
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                {{$testimonial->quote}}
+                            </p>
+                        </div>
+                        <h3 class="title">{{$testimonial->author}}</h3>
+                        <span class="post">{{$testimonial->position}}</span>
+                    </div>
+                  @endforeach
 
-                @foreach($testimonials as $testimonial)
-                  <div class="testimonial">
-
-                      <p class="description">
-                          {{$testimonial->quote}}
-                      </p>
-                      <h3 class="title">{{$testimonial->author}}
-                          <span class="post"> - {{$testimonial->position}}</span>
-                      </h3>
-                  </div>
-                @endforeach
-
-              </div>
-          </div>
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
   </section>
 
 
-  <section id="about">
+  <section id="about" class="about">
           <div class="row row-eq-height">
 
             <div  class="col-md-6">
               <header class="text-center">
-                <h2  class="title">About me</h2>
+                <h2  class="title">Lorem Ipsum</h2>
               </header>
-              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
-              <p>Received overcame oh sensible so at an. Formed do change merely to county it. <strong>Am separate contempt</strong> domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.</p>
-              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet, ea ipsum idque doming has, ad has probo maluisset. Esse novum vivendo mel at. Dicunt verterem nominati ei nam. Libris petentium his cu, ne nec tota graecis mediocrem, odio case cibo vix ea. Viderer iudicabit dissentiet sit id, impedit tibique phaedrum usu eu.
+
+Cu eum voluptaria adipiscing, has tota dissentiet an, in quo blandit principes. Illud voluptaria eu sed, duo duis aliquip et. Ea duo nihil vulputate, mea in eirmod interpretaris. Has nobis propriae appetere in, voluptua conceptam ius an.
+
+Iriure minimum suscipiantur an pri, nec zril consul ne, usu in quod soleat voluptatibus. Vix dictas facilis cu, utroque fierent mei in. Qui ea magna consul, an laudem malorum has. Ex odio posse sed, eu quo soleat altera. Inani deserunt dissentiet quo ut, malorum fierent constituto ea ius, dicta audire vis ad. Qui vitae sadipscing id, ceteros euripidis vim et. Sea in simul concludaturque, brute augue errem ex quo.
+
+Nec lorem omittam scriptorem in, virtute appareat ex cum, ex nibh possim reprimique sit. Ad posse mollis voluptatum eum. Vis ad error alienum praesent, nihil latine urbanitas vel ne, graecis eloquentiam ei eos. Sea ut possim laoreet periculis, eum eu simul nullam semper.
+
+Nam denique periculis maluisset at, dictas pertinacia qui id. Has viris soluta vocent cu, sea id simul incorrupte quaerendum. At alii soluta nostro qui, modus tacimates reprehendunt eum te. Et quas congue duo, hinc autem reformidans ne ius.
+              </p>
             </div>
-            <div class="col-md-6"  style="background: url({{asset('images/mill.jpg')}}) center center no-repeat; background-size: cover;">
+            <div class="col-md-6"  style="background: url({{asset('images/image-sidebar-first.jpg')}}) center center no-repeat; background-size: cover;">
 
 
 
@@ -99,7 +143,7 @@
 
 
 
-            <div class="col-md-6"  style="background: url({{asset('images/mill.jpg')}}) center center no-repeat; background-size: cover;">
+            <div class="col-md-6"  style="background: url({{asset('images/image-sidebar-second.jpg')}}) center center no-repeat; background-size: cover;">
 
 
 
@@ -107,13 +151,19 @@
           </div>
             <div  class="col-md-6">
               <header class="text-center">
-                <h2  class="title">About me</h2>
+                <h2  class="title">Lorem Ipsum</h2>
               </header>
-              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
-              <p>Received overcame oh sensible so at an. Formed do change merely to county it. <strong>Am separate contempt</strong> domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.</p>
-              <p>An sincerity so extremity he additions. Her yet <strong>there truth merit</strong>. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.</p>
-            </div>
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet, ea ipsum idque doming has, ad has probo maluisset. Esse novum vivendo mel at. Dicunt verterem nominati ei nam. Libris petentium his cu, ne nec tota graecis mediocrem, odio case cibo vix ea. Viderer iudicabit dissentiet sit id, impedit tibique phaedrum usu eu.
 
+<br>Cu eum voluptaria adipiscing, has tota dissentiet an, in quo blandit principes. Illud voluptaria eu sed, duo duis aliquip et. Ea duo nihil vulputate, mea in eirmod interpretaris. Has nobis propriae appetere in, voluptua conceptam ius an.
+
+Iriure minimum suscipiantur an pri, nec zril consul ne, usu in quod soleat voluptatibus. Vix dictas facilis cu, utroque fierent mei in. Qui ea magna consul, an laudem malorum has. Ex odio posse sed, eu quo soleat altera. Inani deserunt dissentiet quo ut, malorum fierent constituto ea ius, dicta audire vis ad. Qui vitae sadipscing id, ceteros euripidis vim et. Sea in simul concludaturque, brute augue errem ex quo.
+
+Nec lorem omittam scriptorem in, virtute appareat ex cum, ex nibh possim reprimique sit. Ad posse mollis voluptatum eum. Vis ad error alienum praesent, nihil latine urbanitas vel ne, graecis eloquentiam ei eos. Sea ut possim laoreet periculis, eum eu simul nullam semper.
+
+Nam denique periculis maluisset at, dictas pertinacia qui id. Has viris soluta vocent cu, sea id simul incorrupte quaerendum. At alii soluta nostro qui, modus tacimates reprehendunt eum te. Et quas congue duo, hinc autem reformidans ne ius.
+              </p>
         </div>
       </section>
 

@@ -11439,6 +11439,157 @@ a.text-dark:focus {
   }
 }
 
+#content {
+  padding: 0px;
+}
+
+.homepage .intro {
+  padding: 80px 0px;
+}
+
+.homepage .intro p {
+  margin-top: 20px;
+}
+
+.homepage .blog-section {
+  padding-bottom: 80px;
+}
+
+.homepage .blog-section .blog-post {
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -1px #525252;
+}
+
+.homepage .blog-section .blog-post .blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.homepage .blog-section .blog-post .blog-title {
+  padding-top: 20px;
+}
+
+.homepage .blog-section .blog-post .blog-title a:hover {
+  text-decoration: none;
+}
+
+.homepage .blog-section .blog-post .date {
+  color: #9d9d9d;
+}
+
+.homepage .blog-section .blog-post:hover {
+  -webkit-box-shadow: 11px 18px 26px 0px #525252;
+          box-shadow: 11px 18px 26px 0px #525252;
+}
+
+.homepage .testimonials {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.homepage .testimonials .title {
+  margin-bottom: 40px;
+}
+
+.homepage .testimonials .testimonial {
+  margin: 0 20px 40px;
+}
+
+.homepage .testimonials .testimonial .testimonial-content {
+  padding: 35px 25px 35px 50px;
+  margin-bottom: 35px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.homepage .testimonials .testimonial .testimonial-content:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  bottom: -10px;
+  left: 22px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.homepage .testimonials .testimonial-content .testimonial-icon {
+  width: 50px;
+  height: 45px;
+  background: #3490dc;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  line-height: 42px;
+  position: absolute;
+  top: 37px;
+  left: -19px;
+}
+
+.homepage .testimonials .testimonial-content .testimonial-icon:before {
+  content: "";
+  border-bottom: 16px solid #3490dc;
+  border-left: 18px solid transparent;
+  position: absolute;
+  top: -16px;
+  left: 1px;
+}
+
+.homepage .testimonials .testimonial .description {
+  font-size: 15px;
+  font-style: italic;
+  color: #8a8a8a;
+  line-height: 23px;
+  margin: 0;
+}
+
+.homepage .testimonials .testimonial .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #525252;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.homepage .testimonials .testimonial .post {
+  display: block;
+  font-size: 14px;
+  color: #3490dc;
+}
+
+.homepage .testimonials .owl-theme .owl-controls {
+  display: none !important;
+  margin-top: 20px;
+}
+
+.homepage .testimonials .owl-theme .owl-controls .owl-page span {
+  background: #ccc;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.homepage .testimonials .owl-theme .owl-controls .owl-page.active span,
+.homepage .testimonials .owl-theme .owl-controls.clickable .owl-page:hover span {
+  background: #ff4242;
+}
+
+.homepage .about .title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.homepage .about .paragraph {
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-bottom: 40px;
+}
+
 .blog .page-title {
   padding-top: 150px;
   padding-bottom: 150px;
@@ -11448,8 +11599,7 @@ a.text-dark:focus {
 .blog .blog-post {
   padding: 20px;
   margin-top: 50px;
-  -webkit-box-shadow: -1px 17px 76px 0px #525252;
-  box-shadow: -1px 17px 76px 0px #525252;
+  -webkit-box-shadow: 0px 0px 15px -1px #525252;
 }
 
 .blog .blog-post .blog-image {
@@ -11459,6 +11609,10 @@ a.text-dark:focus {
 
 .blog .blog-post .blog-title {
   padding-top: 20px;
+}
+
+.blog .blog-post .blog-title a:hover {
+  text-decoration: none;
 }
 
 .blog .blog-post .date {
@@ -11512,136 +11666,41 @@ a.text-dark:focus {
   float: right;
 }
 
+.single-blog .content .comments .comment {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: none;
+}
+
+.single-blog .content .comments .comment p {
+  margin-bottom: 0px;
+}
+
+.single-blog .content .comments .line-break {
+  display: none;
+}
+
+.single-blog .content a:hover {
+  text-decoration: none;
+}
+
+.login .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.register .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
 .blog-image {
   display: block;
   width: 100%;
   height: 100%;
   background-size: cover !important;
-}
-
-.testimonial {
-  padding: 70px 30px 50px;
-  margin: 50px 30px 30px;
-  border: 1px solid #ea816b;
-  position: relative;
-}
-
-.testimonial .pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 5px solid #c7373c;
-  overflow: hidden;
-  margin: 0 auto;
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
-}
-
-.testimonial .pic img {
-  width: 100%;
-  height: auto;
-}
-
-.testimonial .description {
-  font-size: 15px;
-  color: #5e595b;
-  line-height: 27px;
-  text-align: center;
-  margin: 0;
-  position: relative;
-}
-
-.testimonial .description:before {
-  content: "\F10D";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 25px;
-  color: #d7d7d7;
-  position: absolute;
-  top: 0;
-  left: -2px;
-}
-
-.testimonial .title {
-  display: inline-table;
-  padding: 10px;
-  margin: 0 auto;
-  background: #fff;
-  border: 1px solid #ea816b;
-  font-size: 20px;
-  font-weight: 700;
-  color: #c7373c;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: -22px;
-  left: 0;
-  right: 0;
-}
-
-.testimonial .post {
-  font-size: 15px;
-  color: #671a36;
-}
-
-.owl-theme .owl-controls {
-  width: 100%;
-  height: 50px;
-  opacity: 1;
-  position: absolute;
-  top: 38%;
-}
-
-.owl-theme .owl-controls .owl-buttons div {
-  width: 50px;
-  height: 50px;
-  line-height: 40px;
-  border-radius: 0;
-  background: transparent;
-}
-
-.owl-prev {
-  position: absolute;
-  left: -5%;
-}
-
-.owl-next {
-  position: absolute;
-  right: -5%;
-}
-
-.owl-prev:after,
-.owl-next:after {
-  content: "\F104";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 30px;
-  color: #c7373c;
-  opacity: 1;
-}
-
-.owl-next:after {
-  content: "\F105";
-}
-
-@media only screen and (max-width: 479px) {
-  .testimonial {
-    padding: 70px 10px 30px;
-  }
-
-  .testimonial .description:before {
-    top: -20px;
-  }
-
-  .testimonial .title {
-    font-size: 12px;
-  }
-
-  .testimonial .post {
-    font-size: 11px;
-  }
 }
 
 .navbar-laravel {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Blog;
 use App\AdminBlog;
 use App\Testimonial;
+use App\Comment;
 class PageController extends Controller
 {
 
@@ -40,7 +41,8 @@ class PageController extends Controller
     public function getSingleBlog($id)
     {
       $blog=Blog::find($id);
-
-      return view('pages.single-blog')->withBlog($blog);
+      $comment=Comment::where('blog_id','=',$id)->get();
+      $blogs=Blog::where('blogCategory_id','=',$blog->blogCategory_id)->where('id','!=',$id)->get();
+      return view('pages.single-blog')->withBlog($blog)->withComments($comment)->withBlogs($blogs);
     }
 }

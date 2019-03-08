@@ -31,9 +31,7 @@
                    @endforeach
                  </p>
            </div>
-        </div>
 
-      </div>
 
       <div class="row">
         <div class="col-md-5">
@@ -44,10 +42,13 @@
               <input type="hidden" name="blog_id" value="{{$blog->id}}">
               <div class="form-row">
 
-                <input type="text" name="username" class="form-control" placeholder="Username">
+                <input type="text" name="username" class="form-control" placeholder="Name">
               </div>
               <div class="form-row">
                 <textarea name="text" rows="8" class="form-control" placeholder="Comment"></textarea>
+              </div>
+              <div class="form-row">
+                <button type="submit" class="btn btn-primary">Leave Comment</button>
               </div>
             </form>
           </div>
@@ -58,10 +59,37 @@
       <div class="row">
         <div class="col-md-5">
           <div class="comments">
-            <h4 class="title">Comments <i class="fa fa-plus"></i> </h4> 
+            <h4 class="title" id="title">Comments <i class="fa fa-plus"></i> </h4>
+
+          @foreach($comments as $comment)
+            <div class="row comment" >
+              <div class="col-md-5">
+                <h5> <strong>{{$comment->username}}</strong> </h5>
+              </div>
+                <div class="col-md-12">
+                  <p>{{$comment->text}}</p>
+                </div>
+
+
+            </div>
+            <hr class="line-break">
+          @endforeach
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Same category:</h3>
+      @foreach($blogs as $blo)
+        <h5>
+          <a href="{{route('single.blog.page',$blog->id)}}">{{$blo->title}}</a>
+
+        </h5>
+      @endforeach
+    </div>
+
+  </div>
    </div>
 </section>
 

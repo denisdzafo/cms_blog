@@ -32,7 +32,6 @@ p {
 }
 
 section {
-  padding: 60px 0;
   position: relative;
 }
 
@@ -245,86 +244,8 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
   font-size: 0.9rem;
 }
 
-/*
-*
-* =====================
-* TESTIMONIALS
-* =====================
-*
-*/
-.testimonials {
-  padding: 0;
-  margin-bottom: 40px;
-}
 
-.testimonials .item {
-  list-style-type: none;
-  margin: 0 5px;
-  background: #fff;
-  padding-bottom: 60px;
-}
 
-.testimonials .item .testimonial {
-  position: relative;
-  padding: 20px;
-}
-
-.testimonials .item .testimonial::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-.testimonials .item .testimonial .text {
-  color: #999;
-  margin-bottom: 40px;
-}
-
-.testimonials .item .testimonial .text p {
-  color: inherit;
-}
-
-.testimonials .item .testimonial .bottom {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  height: 50px;
-}
-
-.testimonials .item .testimonial .bottom .icon {
-  color: #4fbfa8;
-  font-size: 30px;
-  float: left;
-  width: 20%;
-}
-
-.testimonials .item .testimonial .name-picture {
-  float: right;
-  width: 80%;
-  text-align: right;
-}
-
-.testimonials .item .testimonial .name-picture h5 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #777;
-}
-
-.testimonials .item .testimonial .name-picture p {
-  color: #6c757d;
-  margin: 0;
-  font-size: 0.875rem;
-}
-
-.testimonials .item .testimonial .name-picture img {
-  float: right;
-  width: 60px;
-  border-radius: 30px;
-  margin-left: 10px;
-}
 
 .equalize-height .owl-stage {
   display: -webkit-box;

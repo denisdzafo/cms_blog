@@ -10,3 +10,10 @@ $(document).ready(function(){
         autoPlay:true
     });
 })
+
+$(document).ready(function(){
+  $("#title").click(function(){
+    $(".comment").toggle();
+    $(".line-break").toggle();
+  });
+})

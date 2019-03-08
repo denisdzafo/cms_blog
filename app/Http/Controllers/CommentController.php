@@ -37,13 +37,13 @@ class CommentController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-          'username' => 'required|string|max:255',
-          'comment' => 'required|min:10',
+          'username' => 'required',
+          'text' => 'required',
       ]);
 
       $comment=new Comment();
       $comment->username=$request->username;
-      $comment->text=$request->comment;
+      $comment->text=$request->text;
       $comment->blog_id=$request->blog_id;
 
       if($request->user_id)
@@ -53,7 +53,7 @@ class CommentController extends Controller
 
       $comment->save();
       Session::flash('success','Your comment is recived, thank you.');
-      return redirect()->route('blog.page');
+      return redirect()->back();
     }
 
     /**
