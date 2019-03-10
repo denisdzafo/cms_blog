@@ -45,4 +45,11 @@ class PageController extends Controller
       $blogs=Blog::where('blogCategory_id','=',$blog->blogCategory_id)->where('id','!=',$id)->get();
       return view('pages.single-blog')->withBlog($blog)->withComments($comment)->withBlogs($blogs);
     }
+
+    public function getAdminSingleBlog($id)
+    {
+      $blog=AdminBlog::find($id);
+      $blogs=AdminBlog::all();
+      return view('pages.admin-blog')->withBlog($blog)->withBlogs($blogs);
+    }
 }

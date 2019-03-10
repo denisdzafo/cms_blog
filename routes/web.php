@@ -36,7 +36,11 @@ Route::post('moderator/login/submit','Moderator\ModeratorLoginController@submitL
 
 Route::resource('comments','CommentController');
 
+Route::resource('contacts','ContactController');
+
 Route::get('storage/{filename}','HomeController@getPicture')->name('blog.get.picture');
+
+Route::get('admin/single-blog/{id}','PageController@getAdminSingleBlog')->name('admin.single.blog');
 
 Route::middleware(['auth:admin'])->group(function (){
   Route::prefix('admin')->group(function (){

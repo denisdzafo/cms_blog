@@ -8,7 +8,7 @@
    </div>
 </section>
 
-<section>
+<section class="content">
    <div class="container">
       <div class="row">
         @foreach($blogs as $blog)

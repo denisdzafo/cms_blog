@@ -11439,10 +11439,6 @@ a.text-dark:focus {
   }
 }
 
-#content {
-  padding: 0px;
-}
-
 .homepage .intro {
   padding: 80px 0px;
 }
@@ -11484,7 +11480,6 @@ a.text-dark:focus {
 
 .homepage .testimonials {
   padding-top: 80px;
-  padding-bottom: 80px;
 }
 
 .homepage .testimonials .title {
@@ -11590,38 +11585,50 @@ a.text-dark:focus {
   margin-bottom: 40px;
 }
 
+.blog {
+  padding-top: 80px;
+}
+
 .blog .page-title {
   padding-top: 150px;
   padding-bottom: 150px;
   color: #fff;
 }
 
-.blog .blog-post {
+.blog .content {
+  padding-bottom: 80px;
+}
+
+.blog .content .blog-post {
   padding: 20px;
   margin-top: 50px;
   -webkit-box-shadow: 0px 0px 15px -1px #525252;
 }
 
-.blog .blog-post .blog-image {
+.blog .content .blog-post .blog-image {
   width: 100%;
   height: auto;
 }
 
-.blog .blog-post .blog-title {
+.blog .content .blog-post .blog-title {
   padding-top: 20px;
 }
 
-.blog .blog-post .blog-title a:hover {
+.blog .content .blog-post .blog-title a:hover {
   text-decoration: none;
 }
 
-.blog .blog-post .date {
+.blog .content .blog-post .date {
   color: #9d9d9d;
 }
 
-.blog .blog-post:hover {
+.blog .content .blog-post:hover {
   -webkit-box-shadow: 11px 18px 26px 0px #525252;
           box-shadow: 11px 18px 26px 0px #525252;
+}
+
+.single-blog {
+  padding-top: 80px;
 }
 
 .single-blog .content {
@@ -11684,10 +11691,23 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
+.login {
+  padding-top: 80px;
+}
+
 .login .page-title {
   padding-top: 150px;
   padding-bottom: 150px;
   color: #fff;
+}
+
+.login .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.register {
+  padding-top: 80px;
 }
 
 .register .page-title {
@@ -11696,11 +11716,78 @@ a.text-dark:focus {
   color: #fff;
 }
 
-.blog-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-size: cover !important;
+.register .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.admin-single-blog {
+  padding-top: 80px;
+}
+
+.admin-single-blog .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.admin-single-blog .content .blog-post .title {
+  padding-top: 40px;
+}
+
+.admin-single-blog .content .blog-post .meta .author {
+  margin-left: 20px;
+  color: #000;
+  font-size: 17px;
+}
+
+.admin-single-blog .content .blog-post .tag {
+  background: #bababa;
+  padding: 3px 10px;
+  margin-right: 20px;
+  color: #000;
+}
+
+.contact {
+  padding-top: 80px;
+}
+
+.contact .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.contact .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about {
+  padding-top: 80px;
+}
+
+.about .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.about .intro {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about .intro .page-link {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about .intro .page-link a {
+  font-size: 16px;
+}
+
+.about .intro .page-link a:hover {
+  text-decoration: none;
 }
 
 .navbar-laravel {

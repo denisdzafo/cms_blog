@@ -10,12 +10,10 @@
 </section>
 
 
-<section>
+<section class="content">
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-8">
-
-
 
                       <form method="POST" action="{{ route('login') }}">
                           @csrf
@@ -75,7 +73,7 @@
                           </div>
                       </form>
 
-            
+
           </div>
       </div>
   </div>

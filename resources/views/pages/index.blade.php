@@ -35,7 +35,7 @@
            <div class="blog-post">
              <img src="{{asset($image)}}" alt="" class="blog-image">
 
-                 <h5 class="blog-title"><a href="{{route('single.blog.page',$blog->id)}}">{{$blog->title}}</a></h5>
+                 <h5 class="blog-title"><a href="{{route('admin.single.blog',$blog->id)}}">{{$blog->title}}</a></h5>
                  <i class="date">{{$blog->created_at->format('d/m/Y') }}</i>
                  <p>
                     @php

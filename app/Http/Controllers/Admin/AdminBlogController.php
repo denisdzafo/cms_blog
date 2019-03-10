@@ -44,14 +44,14 @@ class AdminBlogController extends Controller
       $this->validate($request, [
           'title' => 'required|string|max:255',
           'content' => 'required',
-          'blogCategory_id'=>'required'
+
       ]);
 
       ;
         $blog=new AdminBlog();
         $blog->title=$request->title;
         $blog->content=$request->content;
-        $blog->blogCategory_id=$request->blogCategory_id;
+
 
         if ( $request->picture) {
             $title=str_replace(' ', '_', $request->title);
@@ -102,13 +102,13 @@ class AdminBlogController extends Controller
       $this->validate($request, [
           'title' => 'required|string|max:255',
           'content' => 'required',
-          'blogCategory_id'=>'required'
+
       ]);
 
         $blog=AdminBlog::findOrFail($id);
         $blog->title=$request->title;
         $blog->content=$request->content;
-        $blog->blogCategory_id=$request->blogCategory_id;
+
 
         if ( $request->picture) {
             Storage::delete($blog->picture);
