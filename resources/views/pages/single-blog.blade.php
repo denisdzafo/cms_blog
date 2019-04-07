@@ -34,16 +34,21 @@
 
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-8">
           <div class="comment-form">
             <h3 class="title">Leave Comment</h3>
             <form  action="{{route('comments.store')}}" method="post">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
               <input type="hidden" name="blog_id" value="{{$blog->id}}">
+              @php $user=Auth::guard('web')->user(); @endphp
+              @if($user)
+              <input type="hidden" name="username" class="form-control" placeholder="Name" value="{{$user->username}}">
+              <input type="hidden" name="user_id" value="{{$user->id}}">
+              @else
               <div class="form-row">
-
                 <input type="text" name="username" class="form-control" placeholder="Name">
               </div>
+              @endif
               <div class="form-row">
                 <textarea name="text" rows="8" class="form-control" placeholder="Comment"></textarea>
               </div>
@@ -57,13 +62,13 @@
       </div>
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-8">
           <div class="comments">
             <h4 class="title" id="title">Comments <i class="fa fa-plus"></i> </h4>
 
           @foreach($comments as $comment)
             <div class="row comment" >
-              <div class="col-md-5">
+              <div class="col-md-8">
                 <h5> <strong>{{$comment->username}}</strong> </h5>
               </div>
                 <div class="col-md-12">

@@ -8,7 +8,7 @@ class Comment extends Model
 {
   public function blogs()
   {
-    return $this->belongsTo('App\Blog');
+    return $this->belongsTo('App\Blog','blog_id');
   }
 
   public function users()

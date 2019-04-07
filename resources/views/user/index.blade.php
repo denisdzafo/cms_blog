@@ -1,29 +1,46 @@
-@extends('layouts.app')
+@extends('user.partials.main')
+
+@section('title','User Dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+@section('body_class','user-dashboard')
+<section class="content">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+            @php $image='storage'.'/'.$user->picture; @endphp
+            <img src="{{asset($image)}}" alt="" class="profile-image">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+          </div>
 
-                    You are logged in
-                    <br>
-                    <a href="{{route('blogs.index')}}">Blogs</a>
-                    <br>
-                    <a href="{{route('user.edit.profile')}}">Edit Profile</a>
-                    <br>
-                    <a href="{{route('user.get.comments')}}">Your Comments</a>
-                </div>
+          <div class="col-md-6">
+            <h3>{{$user->username}}</h3>
+            <p>Email: <i>{{$user->email}}</i>  </p>
+            <p>Registred: <i>{{$user->created_at->format('d/m/Y')}}</i>  </p>
+            <hr>
+            <p>
+              {{$user->info}}
+            </p>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="{{route('blogs.index')}}" class="btn btn-primary">My Blogs</a>
+              </div>
+              <div class="col-md-4">
+                <a href="{{route('user.get.comments')}}" class="btn btn-primary">My Comments</a>
+              </div>
+              <div class="col-md-4">
+                <a href="{{route('user.edit.profile')}}" class="btn btn-primary">Edit Profile</a>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
+
+            <br>
+
+            <br>
+
+          </div>
+      </div>
+  </div>
+</section>
+
 @endsection

@@ -1,53 +1,42 @@
-@extends('layouts.app')
+
+@extends('user.partials.main')
+
+@section('title','User Comments')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-                @foreach (['danger', 'warning', 'success', 'info','error'] as $key)
-                   @if ( Session::has($key) )
-                   <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>
-                   @endif
-                @endforeach
+@section('body_class','user-comments')
 
-                 @if (count($errors) > 0)
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-                  @endif
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<section id="header" style="background: url({{asset('images/contact.jpg')}}) center center no-repeat; background-size: cover;">
+   <div class="container text-center">
+      <h1 class="page-title">My Comments On Blogs</h1>
+   </div>
+</section>
 
-                    Comments
-                    <br>
-                    <div class="row">
-                      @foreach($comments as $comment)
-                        <div class="col-md-12">
-                          @php $blog=App\Blog::find($comment->blog_id);@endphp
-                          <h2>{{$blog->title}}</h2>
+<section id="user-comments"  class="content">
+      <div class="container">
 
-                            <p> {{ $comment->text }}</p>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            @foreach (['danger', 'warning', 'success', 'info','error'] as $key)
+               @if ( Session::has($key) )
+               <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>
+               @endif
+            @endforeach
 
-                          @endforeach
+              @foreach($comments as $comment)
+                <div class="col-md-12 comment">
+                    <p> {{ $comment->text }}</p>
+                    <p>Created: <i>{{$comment->created_at}}</i> </p>
+                    <p>Comment on blog: <a href="{{route('single.blog.page',$comment->blog_id)}}">{{$comment->blogs->title}}</a> </p>
 
-                        </div>
-
-                    </div>
-                    <br>
 
                 </div>
-            </div>
+                @endforeach
+
+                  {{$comments->links()}}
+              
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 @endsection

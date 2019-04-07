@@ -11635,6 +11635,11 @@ a.text-dark:focus {
   padding: 80px 0px;
 }
 
+.single-blog .content .blog-post .blog-image {
+  width: 100%;
+  height: auto;
+}
+
 .single-blog .content .blog-post .title {
   padding-top: 40px;
 }
@@ -11730,6 +11735,11 @@ a.text-dark:focus {
   padding-bottom: 80px;
 }
 
+.admin-single-blog .content .blog-post .blog-image {
+  width: 100%;
+  height: auto;
+}
+
 .admin-single-blog .content .blog-post .title {
   padding-top: 40px;
 }
@@ -11788,6 +11798,165 @@ a.text-dark:focus {
 
 .about .intro .page-link a:hover {
   text-decoration: none;
+}
+
+.user-dashboard {
+  padding-top: 180px;
+  padding-bottom: 80px;
+}
+
+.user-dashboard .profile-image {
+  width: 100%;
+  height: auto;
+}
+
+.user-dashboard .btn {
+  width: 150px;
+}
+
+.user-edit-profile {
+  padding-top: 80px;
+}
+
+.user-edit-profile .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.user-edit-profile .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.user-blog {
+  padding-top: 80px;
+}
+
+.user-blog .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.user-blog .content {
+  padding-bottom: 80px;
+}
+
+.user-blog .content .create-blog {
+  float: right;
+  margin-top: 60px;
+}
+
+.user-blog .content .blog-post {
+  padding: 20px;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 0px 15px -1px #525252;
+}
+
+.user-blog .content .blog-post .setings-buttons .btn-info {
+  color: #fff;
+}
+
+.user-blog .content .blog-post .blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.user-blog .content .blog-post .blog-title {
+  padding-top: 20px;
+}
+
+.user-blog .content .blog-post .blog-title a:hover {
+  text-decoration: none;
+}
+
+.user-blog .content .blog-post .date {
+  color: #9d9d9d;
+}
+
+.user-blog .content .blog-post:hover {
+  -webkit-box-shadow: 11px 18px 26px 0px #525252;
+          box-shadow: 11px 18px 26px 0px #525252;
+}
+
+.user-blog .modal .modal-header {
+  display: inline-block !important;
+}
+
+.user-blog .modal .btn-default {
+  background: #429d42;
+  color: #fff;
+}
+
+.user-create-blog {
+  padding-top: 80px;
+}
+
+.user-create-blog .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.user-create-blog .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.user-create-blog .content .tags-checkbox {
+  margin-right: 3px;
+}
+
+.user-create-blog .content .tag-name {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.user-comments {
+  padding-top: 80px;
+}
+
+.user-comments .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.user-comments .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.user-comments .content .comment {
+  background: #fff;
+  border: 1px solid  #cecece;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.user-edit-blog {
+  padding-top: 80px;
+}
+
+.user-edit-blog .page-title {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+
+.user-edit-blog .content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.user-edit-blog .content .tags-checkbox {
+  margin-right: 3px;
+}
+
+.user-edit-blog .content .tag-name {
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .navbar-laravel {

@@ -13,7 +13,8 @@ class UserController extends Controller
 {
     public function index()
     {
-      return view('user.index');
+      $user=Auth::user();
+      return view('user.index')->withUser($user);
     }
     public function editProfile()
     {
@@ -59,7 +60,7 @@ class UserController extends Controller
     public function getComments()
     {
       $id=Auth::guard('web')->id();
-      $comments=Comment::where('user_id','=',$id)->get();
+      $comments=Comment::where('user_id','=',$id)->paginate(5);
       return view('user.comments')->withComments($comments);
     }
 }

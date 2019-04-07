@@ -1,0 +1,144 @@
+.user-dashboard{
+  .profile-image{
+    width: 100%;
+    height: auto;
+  }
+  .btn{
+    width: 150px;
+  }
+  padding-top: 180px;
+  padding-bottom: 80px;
+}
+
+
+.user-edit-profile{
+  .page-title{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color:#fff;
+  }
+  .content{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  padding-top: 80px;
+}
+
+
+.user-blog{
+  .page-title{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color:#fff;
+  }
+  .content{
+    .create-blog{
+      float: right;
+      margin-top:60px;
+    }
+    .blog-post{
+      .setings-buttons{
+        .btn-info{
+          color:#fff;
+        }
+      }
+      .blog-image{
+        width: 100%;
+        height: auto;
+      }
+
+        .blog-title{
+          a:hover{
+            text-decoration: none;
+          }
+
+          padding-top:20px;
+        }
+
+        .date {
+          color: #9d9d9d;
+        }
+
+      padding: 20px;
+      margin-top: 50px;
+      -webkit-box-shadow: 0px 0px 15px -1px #525252;
+    }
+    .blog-post:hover{
+      box-shadow: 11px 18px 26px 0px #525252;
+    }
+    padding-bottom: 80px;
+  }
+  .modal{
+    .modal-header{
+      display: inline-block!important;
+    }
+
+    .btn-default{
+      background: #429d42;
+      color: #fff;
+    }
+  }
+
+
+  padding-top:80px;
+}
+
+.user-create-blog{
+  .page-title{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color:#fff;
+  }
+  .content{
+    .tags-checkbox{
+      margin-right: 3px;
+    }
+    .tag-name{
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  padding-top: 80px;
+}
+
+.user-comments{
+  .page-title{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color:#fff;
+  }
+  .content{
+    .comment{
+      background: #fff;
+      border:1px solid  #cecece;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+    padding-top: 80px;
+}
+
+.user-edit-blog{
+  .page-title{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color:#fff;
+  }
+  .content{
+    .tags-checkbox{
+      margin-right: 3px;
+    }
+    .tag-name{
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  padding-top: 80px;
+}

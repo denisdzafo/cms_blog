@@ -117,7 +117,7 @@
         background: #ff4242;
     }
     padding-top:80px;
-  
+
   }
 
 
@@ -179,6 +179,10 @@
 .single-blog{
   .content{
     .blog-post{
+      .blog-image{
+        width: 100%;
+        height: auto;
+      }
       .title{
         padding-top: 40px;
       }
@@ -266,6 +270,10 @@
 .admin-single-blog{
   .content{
     .blog-post{
+      .blog-image{
+        width: 100%;
+        height: auto;
+      }
       .title{
         padding-top: 40px;
       }

@@ -10,6 +10,7 @@ use App\BlogCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Tag;
+use App\Comment;
 
 class BlogController extends Controller
 {
@@ -145,7 +146,14 @@ class BlogController extends Controller
     public function destroy($id)
     {
       $blog=Blog::findOrFail($id);
+      $comments=Comment::where('blog_id',"=",$blog->id)->get();
+
+      foreach($comments as $comment)
+      {
+        $comment->delete();
+      }
       $blog->delete();
+      $blog->tags()->detach();
 
       Session::flash('success','You have succesfully deleted a blog.');
       return redirect()->route('blogs.index');

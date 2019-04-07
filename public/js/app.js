@@ -36317,6 +36317,18 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('#deleteModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var id = button.data('id');
+        var url = $(this).attr('data-url');
+        console.log(id);
+        console.log(url);
+        $("#deleteForm", 'input').val(id);
+        $('#deleteMessageForm').attr("action", "/user/blogs/" + id);
+    });
+});
+
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {
